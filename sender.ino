@@ -14,10 +14,11 @@ void setup() {
 
   LoRa.setPins(SS, RST, DIO0);
   LoRa.setSpreadingFactor(12);
-  LoRa.setSignalBandwidth(62.5E3);
+  LoRa.setSignalBandwidth(7.8E3);
+  LoRa.setTxPower(20);
   LoRa.enableCrc();
   
-  while (!LoRa.begin(928E6)) {
+  while (!LoRa.begin(915E6)) {
     Serial.println(".");
     delay(500);
   }
